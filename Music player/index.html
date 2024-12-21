@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="music-player">
+    <h2>Music Player</h2>
+    <audio id="audio" controls>
+      <source src="Salar bgm.mp3.mpeg" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="controls">
+      <button id="play">Play</button>
+      <button id="pause">Pause</button>
+      <button id="stop">Stop</button>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    document.getElementById('play').addEventListener('click', () => audio.play());
+    document.getElementById('pause').addEventListener('click', () => audio.pause());
+    document.getElementById('stop').addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+  </script>
+</body>
+</html>
